@@ -8,6 +8,12 @@ For running Jenkins on AMAZON, start [here](./amazon-eks/readme.md)
 For running Jenkins on Local Docker for Windows or Minikube <br/>
 Watch the [video](https://youtu.be/eRWIJGF3Y2g)
 
+kubectl create namespace jenkins
+kubectl -n jenkins apply -f .\jenkins\
+kubectl -n jenkins port-forward <jenkinspod> 8080
+kubectl -n logs <jenkinspod> -tail 10
+
+
 # Setting up Jenkins Agent
 
 After installing `kubernetes-plugin` for Jenkins
